@@ -70,7 +70,7 @@ fun mainGramm() {
 fun mainReg(){
     val regex = listOf(Reg(term = listOf("0")),
         Reg(reg = listOf(
-            Reg(term = listOf("0","1")),
+            Reg(term = listOf("0","1"), single = false),
             Reg(term = listOf("0","1"))
         )))
     val regGen = RegExpGenerated(regex)
