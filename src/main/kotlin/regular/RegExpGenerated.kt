@@ -16,8 +16,11 @@ class RegExpGenerated(regexp: List<Reg>) {
 
     private fun generatedString(chain: String, terms: List<String>, single: Boolean, maxLen: Int) {
         if (chain.count() > maxLen) return
-        if (chain.isNotBlank())
-        this.listGeneratedString += chain
+        if (single){
+            if( chain.isNotBlank() ) this.listGeneratedString += chain
+        }else {
+            this.listGeneratedString += chain
+        }
         for (term in terms) {
             if(single){
                 generatedString(chain + term, listOf(), single, maxLen)
@@ -27,24 +30,49 @@ class RegExpGenerated(regexp: List<Reg>) {
         }
     }
 
+    private fun merge(maxLen: Int) {
+        if(this.listChain.isEmpty() || this.listGeneratedString.isEmpty()){
+            this.listChain += this.listGeneratedString
+            this.listGeneratedString = emptyList()
+            return
+        }
+        val list = mutableListOf<String>()
+        for (chain in this.listChain) {
+            for (string in this.listGeneratedString) {
+                val size = chain.length + string.length
+                if (size <= maxLen) {
+                    list += "$chain$string"
+                }
+            }
+        }
+        this.listChain = list.toList()
+        this.listGeneratedString = emptyList()
+    }
+
     private fun generated(chain: String, rule: Reg, maxLen: Int) {
         for (action in rule.reg) {
             if(action.term.isNotEmpty()) {
                 generatedString(chain, action.term, action.single, maxLen)
-                this.listChain += this.listGeneratedString
-                this.listGeneratedString = emptyList()
+                merge(maxLen)
                 continue
             }
             generated(chain, action, maxLen)
-            this.listChain += this.listGeneratedString
-            this.listGeneratedString = emptyList()
+            merge(maxLen)
         }
+    }
+
+    private fun removalExcess(minLen: Int): List<String>{
+        val list = this.listChain.filter { it.length >= minLen }.toSet()
+        this.listChain = emptyList()
+        return list.toList()
     }
 
     fun start(minLen: Int, maxLen: Int): List<String> {
         val startReg = Reg(reg = rules)
         generated("", startReg, maxLen)
-        return this.listChain
+        println("====result=====")
+        this.listChain.forEach { println(it) }
+        return removalExcess(minLen)
     }
 
 }

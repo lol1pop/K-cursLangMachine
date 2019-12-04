@@ -74,10 +74,10 @@ fun mainReg(){
             Reg(term = listOf("0","1"))
         )))
     val regGen = RegExpGenerated(regex)
-    val result = regGen.start(1,3)
-    for(chain in result){
-        println(chain)
-    }
+    val result = regGen.start(3,10)
+//    for(chain in result){
+//        println(chain)
+//    }
 }
 
 fun main(){
