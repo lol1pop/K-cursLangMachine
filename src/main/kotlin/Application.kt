@@ -2,6 +2,8 @@ import grammatic.GeneratedSequence
 import grammatic.entity.DataGrammatics
 import regular.Reg
 import regular.RegExpGenerated
+import com.mifmif.common.regex.Generex
+import com.mifmif.common.regex.util.Iterator
 
 //import gui.MainForm
 //import javafx.application.Application
@@ -81,5 +83,20 @@ fun mainReg(){
 }
 
 fun main(){
-    mainReg()
+    genregEx(rep("abc(a+b)^((a+b)^c(a+b)^c(a+b)^)^abc",5))
+   // genregEx(rep("0(1+0)^((0+1)(0+1))",5))
+   // mainReg()
 }
+
+fun genregEx(str: String) {
+    val generex = Generex(str)
+    generex.getMatchedStrings(100).forEach { println(it) }
+//    val matchedStrs: List<String> = generex.getAllMatchedStrings()
+//
+//    val iterator: Iterator? = generex.iterator()
+//    while (iterator?.hasNext()!!) {
+//        println(iterator.next().toString() + " ")
+//    }
+}
+
+fun rep(reg: String, max: Int) = reg.replace("+","|").replace("^","{0,$max}")
