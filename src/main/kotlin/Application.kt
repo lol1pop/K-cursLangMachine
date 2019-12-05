@@ -1,3 +1,4 @@
+import analyzer.Analyzer
 import grammatic.GeneratedSequence
 import grammatic.entity.DataGrammatics
 import regular.Reg
@@ -83,7 +84,11 @@ fun mainReg(){
 }
 
 fun main(){
-    genregEx(rep("abc(a+b)^((a+b)^c(a+b)^c(a+b)^)^abc",5))
+    val a = Analyzer()
+    a.set("0^*1^")
+    val regresult = a.stringToObject()
+    println(regresult)
+    //genregEx(rep("abc(a+b)^((a+b)^c(a+b)^c(a+b)^)^abc",5))
    // genregEx(rep("0(1+0)^((0+1)(0+1))",5))
    // mainReg()
 }
