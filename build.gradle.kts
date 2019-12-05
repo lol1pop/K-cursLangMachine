@@ -26,6 +26,7 @@ dependencies {
     implementation("org.openjfx:javafx-graphics:11:$platform")
     implementation("org.openjfx:javafx-controls:11:$platform")
     implementation("com.google.code.gson:gson:2.8.6")
+    implementation("com.github.mifmif:generex:1.0.2")
 }
 
 tasks.withType<KotlinCompile> {
