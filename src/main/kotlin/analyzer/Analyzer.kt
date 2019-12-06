@@ -1,7 +1,9 @@
 package analyzer
 
-import javafx.geometry.Orientation
 import regular.Reg
+
+//.set("abc*(a+b)^*((a+b)^*c*(a+b)^*c*(a+b)^)^*abc")
+//.set("0*((0^*1+0^*1^)^+((0+1^+0)*(0*1^*0)^)^+(0+1^*0))^")
 
 class Analyzer {
 
@@ -19,35 +21,25 @@ class Analyzer {
     private fun isOpening(char: Char) = ('(' == char)
     private fun isClosing(char: Char) = (')' == char)
 
-    private fun findClosingBracket(index: Int): Int {
-        var counterBracket = 0
-        for(i in index until regExString.length) {
-            val char = regExString[i]
-            if (counterBracket == 0 && isClosing(char)) return i
-            if(isOpening(char)) counterBracket ++
-            if (isClosing(char)) counterBracket --
-        }
-        return index
-    }
-
     private fun checkSpecialSymbol(left: Int, right: Int) {
 
     }
 
-    private fun detectOperation(left: Int, right: Int): Operation {
+    private fun detectOperation(expression: String): Operation {
         var or = false
         var and = false
-        var next = 0
-        for(i in left until right){
-            if(i < next)
-                continue
-            val char = regExString[i]
-            if(isOpening(char)) {
-                next = findClosingBracket(i + 1) + 1
+        var closeBracket = 0
+        for(char in expression){
+            if(isOpening(char)){
+                closeBracket++
                 continue
             }
-            if(char == '+') or = true
-            if(char == '*') and = true
+            if(isClosing(char)){
+                closeBracket--
+                continue
+            }
+            if(char == '+' && closeBracket == 0) or = true
+            if(char == '*' && closeBracket == 0) and = true
         }
         return when {
             !or && and -> Operation.AND
@@ -56,71 +48,75 @@ class Analyzer {
         }
     }
 
-    private fun checkBracket(left: Int, right: Int): Boolean {
-        for(i in left until right)
-            if(isBracket(regExString[i])) return true
+    private fun checkBracket(expression: String): Boolean {
+        for(char in expression)
+            if(isBracket(char)) return true
         return false
     }
 
-    private fun readString(left: Int, right: Int): Reg {
-        var reg = Reg()
+    private fun String.splitBracket(char: Char): List<String> {
+        val list = mutableListOf<String>()
+        var counterBracket = 0
         var next = 0
-        for (i in left until right) {
-            if(i < next) continue
-            val char = regExString[i]
-            if(isOpening(char)) {
-
-            } else {
-                if(!isSpecial(char)) {
-                    if(!checkBracket(left, right)) {
-                        return listTerm(left, right)
-                    } else {
-                        when(detectOperation(left, right)) {
-                            Operation.AND -> true
-                            Operation.OR -> true
-                            Operation.Mixed -> true
-                        }
-                    }
-                } else {
-                    //TODO: exception
-                }
+        for (i in this.indices) {
+            val s = this[i]
+            if (i < next) continue
+            if (isOpening(this[i])) counterBracket ++
+            if (isClosing(this[i])) counterBracket --
+            if (counterBracket == 0 && this[i] == char) {
+                list += this.substring(next, i)
+                next = i + 1
             }
         }
-        return reg
+        if(counterBracket == 0 && next < this.length) {
+            list += this.substring(next, this.length)
+        }
+        return list
     }
 
-    private fun readString(): List<Reg> {
+    private fun listAndReg(regEx: String): List<Reg>  {
         val reg = mutableListOf<Reg>()
-        var next = 0
-        for(i in regExString.indices){
-            if(i < next)
-                continue
-            val char = regExString[i]
-            if(isOpening(char)){
-                next = findClosingBracket(i + 1)
-                reg += readString(i + 1, next - 1)
-                next++
-                continue
-            } else {
-                if(!isSpecial(char)){
-                    next = endTerm(i)
-                    reg += takeTerm(i, next)
-                } else {
-                    if (char == '*' || char == '^')
-                        continue
-                    //TODO: exception
-                }
+        val expressions = regEx.splitBracket('*')
+        for(exp in expressions){
+            reg += if (isOpening(exp.first()))
+                if (isLoop(exp.last())) readBracket(exp.drop(1).dropLast(2), true)
+                else readBracket(exp.drop(1).dropLast(1))
+            else takeTerm(exp)
+        }
+        return reg.toList()
+    }
+
+    private fun listOrReg(regEx: String): List<Reg> {
+        val reg = mutableListOf<Reg>()
+        val expressions = regEx.splitBracket('+')
+        for(exp in expressions){
+            val detectAndExp = exp.splitBracket('*').size > 1
+            reg += if(detectAndExp){
+                Reg(andReg = listAndReg(exp))
+            }else {
+                if (isOpening(exp.first()))
+                    if (isLoop(exp.last())) readBracket(exp.drop(1).dropLast(2), true)
+                    else readBracket(exp.drop(1).dropLast(1))
+                else takeTerm(exp)
             }
         }
         return reg.toList()
     }
 
-    private fun listTerm(left: Int, right: Int): Reg {
-        val substr = regExString.substring(left, right + 1)
-        return when(detectOperation(left, right)) {
-            Operation.OR -> listOrTerm(substr)
-            Operation.AND -> listAndTerm(substr)
-            Operation.Mixed -> listMixedTerm(substr)
+    private fun readBracket(regEx: String, loop: Boolean = false): Reg {
+        if(!checkBracket(regEx)) //(0+(1^+0)) |(0*(1^+0)) | (0+(1^*0)*0)
+            return listTerm(regEx).copy(single = !loop) //(0+1^+0) | (0*1^*0) | (0+1^*0)
+        return when(detectOperation(regEx)){
+            Operation.AND -> Reg(andReg = listAndReg(regEx), single =  !loop)  //0*((0+1^+0)*(0*1^*0)^*(0+1^*0))^
+            Operation.OR, Operation.Mixed -> Reg(orReg = listOrReg(regEx), single =  !loop) //0*(0+(0+1^+0)*(0*1^*0)^+(0+1^*0))^
+        }
+    }
+
+    private fun listTerm(expression: String): Reg {
+        return when(detectOperation(expression)) {
+            Operation.OR -> listOrTerm(expression)
+            Operation.AND -> listAndTerm(expression)
+            Operation.Mixed -> listMixedTerm(expression)
         }
     }
 
@@ -130,7 +126,7 @@ class Analyzer {
         for(term in terms){
             list += listAndTerm(term)
         }
-        return Reg(termReg = list.toList())
+        return Reg(orReg = list.toList())
     }
 
     private fun listAndTerm(substr: String): Reg {
@@ -139,7 +135,7 @@ class Analyzer {
         for(term in terms){
             list += takeTerm(term)
         }
-        return Reg(reg = list.toList())
+        return Reg(andReg = list.toList())
     }
 
     private fun listOrTerm(substr: String): Reg {
@@ -156,21 +152,8 @@ class Analyzer {
         else Reg(term = listOf(term))
     }
 
-    private fun takeTerm(left: Int, right: Int): Reg {
-        val term = regExString.substring(left, right + 1)
-            .removeSuffix("*").removeSuffix("+")
-        return  takeTerm(term)
-    }
-
-    private fun endTerm(index: Int): Int {
-        for (i in index until regExString.length)
-            if (isSpecial(regExString[i]))
-                return i
-        return index
-    }
-
     fun stringToObject(): List<Reg> {
-        return readString()
+        return listAndReg(this.regExString)
     }
 
     fun regToString(): String {

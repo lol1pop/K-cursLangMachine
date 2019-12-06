@@ -4,7 +4,6 @@ import grammatic.entity.DataGrammatics
 import regular.Reg
 import regular.RegExpGenerated
 import com.mifmif.common.regex.Generex
-import com.mifmif.common.regex.util.Iterator
 
 //import gui.MainForm
 //import javafx.application.Application
@@ -72,7 +71,7 @@ fun mainGramm() {
 
 fun mainReg(){
     val regex = listOf(Reg(term = listOf("0")),
-        Reg(reg = listOf(
+        Reg(andReg = listOf(
             Reg(term = listOf("0","1"), single = false),
             Reg(term = listOf("0","1"))
         )))
@@ -85,14 +84,15 @@ fun mainReg(){
 
 fun main(){
     val a = Analyzer()
-    a.set("0*(0^*1+0^*1^)")
+    a.set("101*(1+0)^*((1+0)^*11*(1+0)^*00*(1+0)^)^*101")
     val regresult = a.stringToObject()
     println(regresult)
-    //genregEx(rep("abc(a+b)^((a+b)^c(a+b)^c(a+b)^)^abc",5))
-   // genregEx(rep("0(1+0)^((0+1)(0+1))",5))
    // mainReg()
 }
 
+
+//genregEx(rep("abc(a+b)^((a+b)^c(a+b)^c(a+b)^)^abc",5))
+// genregEx(rep("0(1+0)^((0+1)(0+1))",5))
 fun genregEx(str: String) {
     val generex = Generex(str)
     generex.getMatchedStrings(100).forEach { println(it) }

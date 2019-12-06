@@ -2,8 +2,8 @@ package regular
 
 data class Reg(
     val term: List<String> = listOf(),
-    val termReg: List<Reg> = listOf(),
-    val reg: List<Reg> = listOf(),
+    val orReg: List<Reg> = listOf(),
+    val andReg: List<Reg> = listOf(),
     val single: Boolean = true
 )
 
@@ -50,7 +50,7 @@ class RegExpGenerated(regexp: List<Reg>) {
     }
 
     private fun generated(chain: String, rule: Reg, maxLen: Int) {
-        for (action in rule.reg) {
+        for (action in rule.andReg) {
             if(action.term.isNotEmpty()) {
                 generatedString(chain, action.term, action.single, maxLen)
                 merge(maxLen)
@@ -68,7 +68,7 @@ class RegExpGenerated(regexp: List<Reg>) {
     }
 
     fun start(minLen: Int, maxLen: Int): List<String> {
-        val startReg = Reg(reg = rules)
+        val startReg = Reg(andReg = rules)
         generated("", startReg, maxLen)
         println("====result=====")
         this.listChain.forEach { println(it) }
