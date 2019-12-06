@@ -70,24 +70,25 @@ fun mainGramm() {
 }
 
 fun mainReg(){
-    val regex = listOf(Reg(term = listOf("0")),
-        Reg(andReg = listOf(
-            Reg(term = listOf("0","1"), single = false),
-            Reg(term = listOf("0","1"))
+    val regex = listOf(Reg(term = listOf("a")),
+        Reg(orReg = listOf(
+            Reg(andReg = listOf(Reg(term = listOf("a")))),
+            Reg(andReg = listOf(Reg(term = listOf("b"),single = false),Reg(term = listOf("c"))))
         )))
-    val regGen = RegExpGenerated(regex)
-    val result = regGen.start(3,10)
-//    for(chain in result){
-//        println(chain)
-//    }
+    val a = Analyzer()
+    a.set("s*((e+f^+g)*(e*f^*g)^+(t+y^*t))")
+    val regresult = a.stringToObject()
+    val regGen = RegExpGenerated(regresult)
+    val result = regGen.start(1,6)
+    result.forEach { println(it) }
 }
 
 fun main(){
     val a = Analyzer()
-    a.set("101*(1+0)^*((1+0)^*11*(1+0)^*00*(1+0)^)^*101")
+    a.set("a*(a+b^*c)")
     val regresult = a.stringToObject()
     println(regresult)
-   // mainReg()
+    mainReg()
 }
 
 

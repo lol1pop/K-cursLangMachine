@@ -1,5 +1,7 @@
 package regular
 
+import java.awt.SystemTray
+
 data class Reg(
     val term: List<String> = listOf(),
     val orReg: List<Reg> = listOf(),
@@ -56,7 +58,31 @@ class RegExpGenerated(regexp: List<Reg>) {
                 merge(maxLen)
                 continue
             }
+            val temp = this.listChain
+            this.listChain = emptyList()
             generated(chain, action, maxLen)
+            if(!action.single) this.listGeneratedString += ""
+            this.listGeneratedString += this.listChain
+            this.listChain = temp
+            merge(maxLen)
+        }
+        if(rule.orReg.isNotEmpty()){
+            val list = mutableListOf<String>()
+            for (action in rule.orReg) {
+                if(action.term.isNotEmpty()) {
+                    generatedString(chain, action.term, action.single, maxLen)
+                    list += this.listGeneratedString
+                    this.listGeneratedString = emptyList()
+                    continue
+                }
+                val temp = this.listChain
+                this.listChain = emptyList()
+                if(!action.single) list += ""
+                generated(chain, action, maxLen)
+                list += this.listChain
+                this.listChain = temp
+            }
+            this.listGeneratedString = list
             merge(maxLen)
         }
     }
@@ -71,7 +97,7 @@ class RegExpGenerated(regexp: List<Reg>) {
         val startReg = Reg(andReg = rules)
         generated("", startReg, maxLen)
         println("====result=====")
-        this.listChain.forEach { println(it) }
+        //this.listChain.forEach { println(it) }
         return removalExcess(minLen)
     }
 
