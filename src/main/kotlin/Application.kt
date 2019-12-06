@@ -85,7 +85,7 @@ fun mainReg(){
 
 fun main(){
     val a = Analyzer()
-    a.set("0^*1^")
+    a.set("0*(0^*1+0^*1^)")
     val regresult = a.stringToObject()
     println(regresult)
     //genregEx(rep("abc(a+b)^((a+b)^c(a+b)^c(a+b)^)^abc",5))
