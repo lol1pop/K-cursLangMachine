@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="deb60245-cb37-49bb-8e86-3156794cc22a" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="deb60245-cb37-49bb-8e86-3156794cc22a" name="Default Changelist" comment="update git ignore">
+      <change afterPath="$PROJECT_DIR$/.idea/cursLangMachine.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Application.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/analyzer/Analyzer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/analyzer/Analyzer.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,12 +28,7 @@
       <state>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="cursLangMachine" type="f1a62948:ProjectNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -37,15 +42,32 @@
       </list>
     </option>
   </component>
+  <component name="GOROOT" path="C:/Program Files (x86)/Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1Ttt5nDbzXEsdFkHnUWdVOM6Sdr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="GO_FMT" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
     <property name="configurable.Module.GOPATH.is.expanded" value="false" />
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/kotlin" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../work/amikash_forme_backend" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -64,18 +86,6 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Git\university\TLP\cursLangMachine\src\main\kotlin" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="ApplicationKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
@@ -97,6 +107,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -113,55 +135,194 @@
       <workItem from="1574412565446" duration="1219000" />
       <workItem from="1574507860124" duration="658000" />
       <workItem from="1574669976648" duration="616000" />
-      <workItem from="1574841553663" duration="662000" />
+      <workItem from="1574841553663" duration="797000" />
+      <workItem from="1574927785596" duration="13000" />
+      <workItem from="1575261176842" duration="7019000" />
+      <workItem from="1575345590502" duration="43000" />
+      <workItem from="1575345644986" duration="3373000" />
+      <workItem from="1575351524259" duration="11606000" />
+      <workItem from="1575386670712" duration="4413000" />
+      <workItem from="1575433022180" duration="19096000" />
+      <workItem from="1575519489755" duration="1080000" />
+      <workItem from="1575564620380" duration="6488000" />
     </task>
+    <task id="LOCAL-00001" summary="edit logic">
+      <created>1575404567634</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1575404567634</updated>
+    </task>
+    <task id="LOCAL-00002" summary="generated chain from regExp">
+      <created>1575472513608</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1575472513608</updated>
+    </task>
+    <task id="LOCAL-00003" summary="created analyzer">
+      <created>1575564768439</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1575564768439</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update git ignore">
+      <created>1575566106523</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1575566106523</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="edit logic" />
+    <MESSAGE value="generated chain from regExp" />
+    <MESSAGE value="created analyzer" />
+    <MESSAGE value="update git ignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="update git ignore" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="640" y="259" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1575519425912">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="2560" y="259" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575345628058" />
+    <state x="640" y="259" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.40.1920.1040@0.40.1920.1040" timestamp="1575519425912" />
+    <state x="518" y="128" key="CommitChangelistDialog2" timestamp="1575571939936">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="2438" y="128" key="CommitChangelistDialog2/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575472512971" />
+    <state x="518" y="128" key="CommitChangelistDialog2/0.40.1920.1040@0.40.1920.1040" timestamp="1575571939936" />
+    <state x="184" y="103" key="DiffContextDialog" timestamp="1575571932872">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="184" y="103" key="DiffContextDialog/0.40.1920.1040@0.40.1920.1040" timestamp="1575571932872" />
+    <state x="2615" y="273" key="FileChooserDialogImpl" timestamp="1575531985216">
+      <screen x="1920" y="40" width="1920" height="1040" />
+    </state>
+    <state x="2615" y="273" key="FileChooserDialogImpl/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1575531985216" />
+    <state width="1870" height="357" key="GridCell.Tab.0.bottom" timestamp="1575571750120">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1870" height="357" key="GridCell.Tab.0.bottom/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575471838673" />
+    <state width="1870" height="357" key="GridCell.Tab.0.bottom/0.40.1920.1040@0.40.1920.1040" timestamp="1575571750120" />
+    <state width="1870" height="357" key="GridCell.Tab.0.center" timestamp="1575571750120">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1870" height="357" key="GridCell.Tab.0.center/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575471838673" />
+    <state width="1870" height="357" key="GridCell.Tab.0.center/0.40.1920.1040@0.40.1920.1040" timestamp="1575571750120" />
+    <state width="1870" height="357" key="GridCell.Tab.0.left" timestamp="1575571750120">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1870" height="357" key="GridCell.Tab.0.left/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575471838673" />
+    <state width="1870" height="357" key="GridCell.Tab.0.left/0.40.1920.1040@0.40.1920.1040" timestamp="1575571750120" />
+    <state width="1870" height="357" key="GridCell.Tab.0.right" timestamp="1575571750120">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1870" height="357" key="GridCell.Tab.0.right/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575471838673" />
+    <state width="1870" height="357" key="GridCell.Tab.0.right/0.40.1920.1040@0.40.1920.1040" timestamp="1575571750120" />
+    <state width="1870" height="357" key="GridCell.Tab.1.bottom" timestamp="1575571750326">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1870" height="357" key="GridCell.Tab.1.bottom/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575471847550" />
+    <state width="1870" height="357" key="GridCell.Tab.1.bottom/0.40.1920.1040@0.40.1920.1040" timestamp="1575571750326" />
+    <state width="1870" height="357" key="GridCell.Tab.1.center" timestamp="1575571750325">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1870" height="357" key="GridCell.Tab.1.center/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575471847549" />
+    <state width="1870" height="357" key="GridCell.Tab.1.center/0.40.1920.1040@0.40.1920.1040" timestamp="1575571750325" />
+    <state width="1870" height="357" key="GridCell.Tab.1.left" timestamp="1575571750325">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1870" height="357" key="GridCell.Tab.1.left/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575471847549" />
+    <state width="1870" height="357" key="GridCell.Tab.1.left/0.40.1920.1040@0.40.1920.1040" timestamp="1575571750325" />
+    <state width="1870" height="357" key="GridCell.Tab.1.right" timestamp="1575571750326">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1870" height="357" key="GridCell.Tab.1.right/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575471847550" />
+    <state width="1870" height="357" key="GridCell.Tab.1.right/0.40.1920.1040@0.40.1920.1040" timestamp="1575571750326" />
+    <state x="669" y="245" key="RollbackChangesDialog" timestamp="1575571937494">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="669" y="245" key="RollbackChangesDialog/0.40.1920.1040@0.40.1920.1040" timestamp="1575571937494" />
+    <state x="552" y="270" key="Vcs.Push.Dialog.v2" timestamp="1575571902283">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="2472" y="270" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575472516455" />
+    <state x="552" y="270" key="Vcs.Push.Dialog.v2/0.40.1920.1040@0.40.1920.1040" timestamp="1575571902283" />
+    <state x="610" y="192" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1575507112538">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="610" y="192" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.40.1920.1040@0.40.1920.1040" timestamp="1575507112538" />
+    <state x="624" y="254" key="run.anything.popup" timestamp="1575567128701">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="624" y="254" key="run.anything.popup/0.40.1920.1040@0.40.1920.1040" timestamp="1575567128701" />
+    <state x="623" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1575510375497">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="623" y="239" width="672" height="678" key="search.everywhere.popup/0.40.1920.1040@0.40.1920.1040" timestamp="1575510375497" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/Application.kt</url>
-          <line>49</line>
+          <line>52</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/regular/RegExpGenerated.kt</url>
-          <line>23</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/src/main/kotlin/Application.kt</url>
+          <line>80</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/regular/RegExpGenerated.kt</url>
-          <line>26</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/src/main/kotlin/Application.kt</url>
+          <line>90</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/regular/RegExpGenerated.kt</url>
-          <line>14</line>
-          <option name="timeStamp" value="4" />
+          <url>file://$PROJECT_DIR$/src/main/kotlin/Application.kt</url>
+          <line>88</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/regular/RegExpGenerated.kt</url>
-          <line>22</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/src/main/kotlin/Application.kt</url>
+          <line>89</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/regular/RegExpGenerated.kt</url>
-          <line>25</line>
-          <option name="timeStamp" value="6" />
+          <url>file://$PROJECT_DIR$/src/main/kotlin/analyzer/Analyzer.kt</url>
+          <line>52</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/regular/RegExpGenerated.kt</url>
-          <line>29</line>
-          <option name="timeStamp" value="8" />
+          <url>file://$PROJECT_DIR$/src/main/kotlin/analyzer/Analyzer.kt</url>
+          <line>48</line>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/regular/RegExpGenerated.kt</url>
-          <line>30</line>
-          <option name="timeStamp" value="10" />
+          <url>file://$PROJECT_DIR$/src/main/kotlin/analyzer/Analyzer.kt</url>
+          <line>64</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
