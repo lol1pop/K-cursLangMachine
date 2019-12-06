@@ -2,21 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="deb60245-cb37-49bb-8e86-3156794cc22a" name="Default Changelist" comment="update git ignore">
-      <change afterPath="$PROJECT_DIR$/.idea/cursLangMachine.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Application.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/analyzer/Analyzer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/analyzer/Analyzer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/regular/RegExpGenerated.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/regular/RegExpGenerated.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -219,45 +226,45 @@
       <screen x="1920" y="40" width="1920" height="1040" />
     </state>
     <state x="2615" y="273" key="FileChooserDialogImpl/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1575531985216" />
-    <state width="1870" height="357" key="GridCell.Tab.0.bottom" timestamp="1575571750120">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1870" height="327" key="GridCell.Tab.0.bottom" timestamp="1575653592870">
+      <screen x="1920" y="40" width="1920" height="1040" />
     </state>
-    <state width="1870" height="357" key="GridCell.Tab.0.bottom/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575471838673" />
+    <state width="1870" height="327" key="GridCell.Tab.0.bottom/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575653592870" />
     <state width="1870" height="357" key="GridCell.Tab.0.bottom/0.40.1920.1040@0.40.1920.1040" timestamp="1575571750120" />
-    <state width="1870" height="357" key="GridCell.Tab.0.center" timestamp="1575571750120">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1870" height="327" key="GridCell.Tab.0.center" timestamp="1575653592870">
+      <screen x="1920" y="40" width="1920" height="1040" />
     </state>
-    <state width="1870" height="357" key="GridCell.Tab.0.center/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575471838673" />
+    <state width="1870" height="327" key="GridCell.Tab.0.center/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575653592870" />
     <state width="1870" height="357" key="GridCell.Tab.0.center/0.40.1920.1040@0.40.1920.1040" timestamp="1575571750120" />
-    <state width="1870" height="357" key="GridCell.Tab.0.left" timestamp="1575571750120">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1870" height="327" key="GridCell.Tab.0.left" timestamp="1575653592870">
+      <screen x="1920" y="40" width="1920" height="1040" />
     </state>
-    <state width="1870" height="357" key="GridCell.Tab.0.left/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575471838673" />
+    <state width="1870" height="327" key="GridCell.Tab.0.left/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575653592870" />
     <state width="1870" height="357" key="GridCell.Tab.0.left/0.40.1920.1040@0.40.1920.1040" timestamp="1575571750120" />
-    <state width="1870" height="357" key="GridCell.Tab.0.right" timestamp="1575571750120">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1870" height="327" key="GridCell.Tab.0.right" timestamp="1575653592870">
+      <screen x="1920" y="40" width="1920" height="1040" />
     </state>
-    <state width="1870" height="357" key="GridCell.Tab.0.right/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575471838673" />
+    <state width="1870" height="327" key="GridCell.Tab.0.right/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575653592870" />
     <state width="1870" height="357" key="GridCell.Tab.0.right/0.40.1920.1040@0.40.1920.1040" timestamp="1575571750120" />
-    <state width="1870" height="357" key="GridCell.Tab.1.bottom" timestamp="1575571750326">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1870" height="357" key="GridCell.Tab.1.bottom" timestamp="1575653592152">
+      <screen x="1920" y="40" width="1920" height="1040" />
     </state>
-    <state width="1870" height="357" key="GridCell.Tab.1.bottom/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575471847550" />
+    <state width="1870" height="357" key="GridCell.Tab.1.bottom/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575653592152" />
     <state width="1870" height="357" key="GridCell.Tab.1.bottom/0.40.1920.1040@0.40.1920.1040" timestamp="1575571750326" />
-    <state width="1870" height="357" key="GridCell.Tab.1.center" timestamp="1575571750325">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1870" height="357" key="GridCell.Tab.1.center" timestamp="1575653592151">
+      <screen x="1920" y="40" width="1920" height="1040" />
     </state>
-    <state width="1870" height="357" key="GridCell.Tab.1.center/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575471847549" />
+    <state width="1870" height="357" key="GridCell.Tab.1.center/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575653592151" />
     <state width="1870" height="357" key="GridCell.Tab.1.center/0.40.1920.1040@0.40.1920.1040" timestamp="1575571750325" />
-    <state width="1870" height="357" key="GridCell.Tab.1.left" timestamp="1575571750325">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1870" height="357" key="GridCell.Tab.1.left" timestamp="1575653592151">
+      <screen x="1920" y="40" width="1920" height="1040" />
     </state>
-    <state width="1870" height="357" key="GridCell.Tab.1.left/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575471847549" />
+    <state width="1870" height="357" key="GridCell.Tab.1.left/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575653592151" />
     <state width="1870" height="357" key="GridCell.Tab.1.left/0.40.1920.1040@0.40.1920.1040" timestamp="1575571750325" />
-    <state width="1870" height="357" key="GridCell.Tab.1.right" timestamp="1575571750326">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1870" height="357" key="GridCell.Tab.1.right" timestamp="1575653592151">
+      <screen x="1920" y="40" width="1920" height="1040" />
     </state>
-    <state width="1870" height="357" key="GridCell.Tab.1.right/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575471847550" />
+    <state width="1870" height="357" key="GridCell.Tab.1.right/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575653592151" />
     <state width="1870" height="357" key="GridCell.Tab.1.right/0.40.1920.1040@0.40.1920.1040" timestamp="1575571750326" />
     <state x="669" y="245" key="RollbackChangesDialog" timestamp="1575571937494">
       <screen x="0" y="40" width="1920" height="1040" />
@@ -268,9 +275,10 @@
     </state>
     <state x="2472" y="270" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575472516455" />
     <state x="552" y="270" key="Vcs.Push.Dialog.v2/0.40.1920.1040@0.40.1920.1040" timestamp="1575571902283" />
-    <state x="610" y="192" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1575507112538">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state x="2530" y="192" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1575646920378">
+      <screen x="1920" y="40" width="1920" height="1040" />
     </state>
+    <state x="2530" y="192" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575646920378" />
     <state x="610" y="192" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.40.1920.1040@0.40.1920.1040" timestamp="1575507112538" />
     <state x="624" y="254" key="run.anything.popup" timestamp="1575567128701">
       <screen x="0" y="40" width="1920" height="1040" />
@@ -291,40 +299,20 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/Application.kt</url>
+          <line>82</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/Application.kt</url>
           <line>80</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/Application.kt</url>
-          <line>90</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/Application.kt</url>
-          <line>88</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/Application.kt</url>
-          <line>89</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/analyzer/Analyzer.kt</url>
-          <line>52</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/analyzer/Analyzer.kt</url>
-          <line>48</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/analyzer/Analyzer.kt</url>
-          <line>64</line>
-          <option name="timeStamp" value="24" />
+          <option name="timeStamp" value="71" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JetRunConfigurationType">
+        <watch expression="((Reg)((java.util.ArrayList)((Reg)((java.util.ArrayList)regresult).get(1)).orReg).get(1)).andReg" custom="regular.Reg,java.util.ArrayList" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
