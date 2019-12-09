@@ -78,7 +78,7 @@ fun mainReg(){
             Reg(andReg = listOf(Reg(term = listOf("b"),single = false),Reg(term = listOf("c"))))
         )))
     val a = Analyzer()
-    a.set("s*((((e+f^+g)*((((e*f^*g)^))^)^+(((t+y^*t))))))")
+    a.set("s*((e+f^+g)*(e*f^*g)^+l)^")
     val regresult = a.stringToObject()
     val regGen = RegExpGenerated(regresult)
     val result = regGen.start(1,6)

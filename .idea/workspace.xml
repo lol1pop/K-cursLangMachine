@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="deb60245-cb37-49bb-8e86-3156794cc22a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/analyzer/lexical/Lexical.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Application.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/analyzer/Analyzer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/analyzer/Analyzer.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +57,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1Ttt5nDbzXEsdFkHnUWdVOM6Sdr" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -110,6 +111,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.ApplicationKt" />
         <item itemvalue="Kotlin.ApplicationKt" />
       </list>
     </recent_temporary>
@@ -230,44 +232,52 @@
       <screen x="1920" y="40" width="1920" height="1040" />
     </state>
     <state x="2615" y="273" key="FileChooserDialogImpl/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1575531985216" />
-    <state width="1870" height="357" key="GridCell.Tab.0.bottom" timestamp="1575714176457">
+    <state width="1870" height="327" key="GridCell.Tab.0.bottom" timestamp="1575884633269">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
+    <state width="1870" height="327" key="GridCell.Tab.0.bottom/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1575884633269" />
     <state width="1870" height="327" key="GridCell.Tab.0.bottom/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575654160314" />
     <state width="1870" height="357" key="GridCell.Tab.0.bottom/0.40.1920.1040@0.40.1920.1040" timestamp="1575714176457" />
-    <state width="1870" height="357" key="GridCell.Tab.0.center" timestamp="1575714176457">
+    <state width="1870" height="327" key="GridCell.Tab.0.center" timestamp="1575884633269">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
+    <state width="1870" height="327" key="GridCell.Tab.0.center/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1575884633269" />
     <state width="1870" height="327" key="GridCell.Tab.0.center/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575654160314" />
     <state width="1870" height="357" key="GridCell.Tab.0.center/0.40.1920.1040@0.40.1920.1040" timestamp="1575714176457" />
-    <state width="1870" height="357" key="GridCell.Tab.0.left" timestamp="1575714176457">
+    <state width="1870" height="327" key="GridCell.Tab.0.left" timestamp="1575884633268">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
+    <state width="1870" height="327" key="GridCell.Tab.0.left/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1575884633268" />
     <state width="1870" height="327" key="GridCell.Tab.0.left/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575654160314" />
     <state width="1870" height="357" key="GridCell.Tab.0.left/0.40.1920.1040@0.40.1920.1040" timestamp="1575714176457" />
-    <state width="1870" height="357" key="GridCell.Tab.0.right" timestamp="1575714176457">
+    <state width="1870" height="327" key="GridCell.Tab.0.right" timestamp="1575884633269">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
+    <state width="1870" height="327" key="GridCell.Tab.0.right/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1575884633269" />
     <state width="1870" height="327" key="GridCell.Tab.0.right/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575654160314" />
     <state width="1870" height="357" key="GridCell.Tab.0.right/0.40.1920.1040@0.40.1920.1040" timestamp="1575714176457" />
-    <state width="1870" height="357" key="GridCell.Tab.1.bottom" timestamp="1575714176734">
+    <state width="1870" height="357" key="GridCell.Tab.1.bottom" timestamp="1575884597646">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
+    <state width="1870" height="357" key="GridCell.Tab.1.bottom/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1575884597646" />
     <state width="1870" height="357" key="GridCell.Tab.1.bottom/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575653592152" />
     <state width="1870" height="357" key="GridCell.Tab.1.bottom/0.40.1920.1040@0.40.1920.1040" timestamp="1575714176734" />
-    <state width="1870" height="357" key="GridCell.Tab.1.center" timestamp="1575714176734">
+    <state width="1870" height="357" key="GridCell.Tab.1.center" timestamp="1575884597646">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
+    <state width="1870" height="357" key="GridCell.Tab.1.center/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1575884597646" />
     <state width="1870" height="357" key="GridCell.Tab.1.center/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575653592151" />
     <state width="1870" height="357" key="GridCell.Tab.1.center/0.40.1920.1040@0.40.1920.1040" timestamp="1575714176734" />
-    <state width="1870" height="357" key="GridCell.Tab.1.left" timestamp="1575714176733">
+    <state width="1870" height="357" key="GridCell.Tab.1.left" timestamp="1575884597646">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
+    <state width="1870" height="357" key="GridCell.Tab.1.left/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1575884597646" />
     <state width="1870" height="357" key="GridCell.Tab.1.left/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575653592151" />
     <state width="1870" height="357" key="GridCell.Tab.1.left/0.40.1920.1040@0.40.1920.1040" timestamp="1575714176733" />
-    <state width="1870" height="357" key="GridCell.Tab.1.right" timestamp="1575714176734">
+    <state width="1870" height="357" key="GridCell.Tab.1.right" timestamp="1575884597646">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
+    <state width="1870" height="357" key="GridCell.Tab.1.right/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1575884597646" />
     <state width="1870" height="357" key="GridCell.Tab.1.right/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575653592151" />
     <state width="1870" height="357" key="GridCell.Tab.1.right/0.40.1920.1040@0.40.1920.1040" timestamp="1575714176734" />
     <state x="669" y="245" key="RollbackChangesDialog" timestamp="1575571937494">
@@ -284,6 +294,10 @@
     </state>
     <state x="2530" y="192" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.40.1920.1040/1920.40.1920.1040@1920.40.1920.1040" timestamp="1575646920378" />
     <state x="610" y="192" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.40.1920.1040@0.40.1920.1040" timestamp="1575507112538" />
+    <state x="755" y="453" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1575880189761">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="755" y="453" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.40.1920.1040/1920.40.1920.1040@0.40.1920.1040" timestamp="1575880189761" />
     <state x="624" y="254" key="run.anything.popup" timestamp="1575567128701">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
@@ -298,18 +312,23 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/Application.kt</url>
-          <line>54</line>
+          <line>56</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/Application.kt</url>
-          <line>84</line>
+          <line>86</line>
           <option name="timeStamp" value="68" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/Application.kt</url>
-          <line>82</line>
+          <line>84</line>
           <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/Application.kt</url>
+          <line>82</line>
+          <option name="timeStamp" value="72" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

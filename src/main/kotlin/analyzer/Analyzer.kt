@@ -1,5 +1,6 @@
 package analyzer
 
+import analyzer.lexical.Lexical
 import regular.Reg
 
 //.set("abc*(a+b)^*((a+b)^*c*(a+b)^*c*(a+b)^)^*abc")
@@ -21,8 +22,10 @@ class Analyzer {
     private fun isOpening(char: Char) = ('(' == char)
     private fun isClosing(char: Char) = (')' == char)
 
-    private fun checkSpecialSymbol(left: Int, right: Int) {
-
+    private fun findLoop(expression: String): Boolean {
+        for(char in expression)
+            if(isLoop(char)) return true
+        return false
     }
 
     private fun detectOperation(expression: String): Operation {
@@ -139,12 +142,20 @@ class Analyzer {
     }
 
     private fun listOrTerm(substr: String): Reg {
-        val list = mutableListOf<String>()
         val terms = substr.split("+")
-        for(term in terms){
+        if(findLoop(substr)){
+            val list = mutableListOf<Reg>()
+            for(term in terms){
+                list += takeTerm(term)
+            }
+            return Reg(orReg = list.toList())
+        }else {
+            val list = mutableListOf<String>()
+            for(term in terms){
                 list += takeTerm(term).term.first()
+            }
+            return Reg(term = list.toList())
         }
-        return Reg(term = list.toList())
     }
 
     private fun takeTerm(term: String): Reg {
