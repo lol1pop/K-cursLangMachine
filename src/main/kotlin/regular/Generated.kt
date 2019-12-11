@@ -9,7 +9,7 @@ data class Reg(
     val single: Boolean = true
 )
 
-class RegExpGenerated(regexp: List<Reg>) {
+class GeneratedFromReg(regexp: List<Reg>) {
     private val rules = regexp
 
     private var listGeneratedString = listOf<String>()
