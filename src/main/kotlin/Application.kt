@@ -3,9 +3,10 @@ import analyzer.lexical.Lexical
 import grammatic.GeneratedSequence
 import grammatic.entity.DataGrammatics
 import regular.Reg
-import regular.RegExpGenerated
+import regular.GeneratedFromReg
 import com.mifmif.common.regex.Generex
-import org.intellij.lang.annotations.RegExp
+import regular.GeneratedRegExSeq
+import java.lang.Exception
 
 //import gui.MainForm
 //import javafx.application.Application
@@ -80,7 +81,7 @@ fun mainReg(){
     val a = Analyzer()
     a.set("s*((e+f^+g)*(e*f^*g)^+l)^")
     val regresult = a.stringToObject()
-    val regGen = RegExpGenerated(regresult)
+    val regGen = GeneratedFromReg(regresult)
     val result = regGen.start(1,6)
     result.forEach { println(it) }
 }
@@ -92,6 +93,15 @@ fun mainAnalyzer() {
 }
 
 fun main(){
+    val alphabet = "a,b,c,#,*,(,%".split(",")
+    val special = listOf("*", "(", ")", "+", "^", "#", "%")
+    alphabet.forEach {
+        if(special.contains(it))
+            throw Exception()
+    }
+    if (alphabet.containsAll(special))
+        throw Exception()
+    val reg = GeneratedRegExSeq("a,b,c".split(","),"bb",Pair("c",2)).build()
     val str = "(((a)^))  abc(( a + b   ))^  (( a + ( a + b ))^c(   a +(( a + b )+ (b)+(b^)+(((b)^)) ))^c(( a + b )^+ b )^)^abc   (( a + b )^)(((a)))"
     val k = Lexical.analysis(str)
     mainReg()
