@@ -39,7 +39,7 @@ class GeneratedRegExSeq(
     private fun existSymbolMutliInUnderSeq() = underSeq.split(symbolMulti.first).size - 1
 
     private fun multiOne(): String  =
-        if(underSeq.contains(symbolMulti.first)) "(${alphabet.joinToString("+")})^$underSeq(${alphabet.joinToString("+")})^"
+        if(underSeq.contains(symbolMulti.first)) "(${alphabet.joinToString("+")})^*$underSeq*(${alphabet.joinToString("+")})^"
         else "(${alphabet.joinToString("+")})^(${symbolMulti.first}*$underSeq+$underSeq*${symbolMulti.first})(${alphabet.joinToString("+")})^"
 
     private fun multiDouble(): String =
@@ -63,6 +63,7 @@ class GeneratedRegExSeq(
 
     fun build(): String {
         checkValidData()
+        if(symbolMulti.first.isBlank()) return "(${alphabet.joinToString("+")})^*$underSeq*(${alphabet.joinToString("+")})^"
         if(symbolMulti.second == 1) return multiOne()
         blockMulti()
         if(symbolMulti.second == 2) return multiDouble()
@@ -75,12 +76,6 @@ class GeneratedRegExSeq(
             if(special.contains(it))
                 throw Exception()
         }
-
-        if(symbolMulti.second <= 0)
-            throw Exception()
-
-        if(!alphabet.contains(symbolMulti.first))
-            throw Exception()
 
         underSeq.forEach {
             if (special.contains(it.toString()))

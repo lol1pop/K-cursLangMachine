@@ -117,20 +117,20 @@ object Lexical {
         for (i in regExp.indices){
             val char = regExp[i]
             val nextChar = try { regExp[i + 1] } catch(c: Exception) { break }
-            if(isOpening(char) && isOperation(nextChar)) throw Exception() // (+ | (*
-            if(isOperation(char) && isClosing(nextChar)) throw Exception() // +) | *)
-            if((isOperation(char) || isOpening(char)) && isLoop(nextChar)) throw Exception() // +^ | (^ | *^
-            if(isLoop(char) && isLoop(nextChar)) throw Exception() // ^^
-            if(isOperation(char) && isOperation(nextChar)) throw Exception() // ++ | ** | +* | *+
+            if(isOpening(char) && isOperation(nextChar)) throw Exception( " Некоректно указан операнд: (+ | (*" ) // (+ | (*
+            if(isOperation(char) && isClosing(nextChar)) throw Exception( " Некоректно указан операнд: +) | *)" ) // +) | *)
+            if((isOperation(char) || isOpening(char)) && isLoop(nextChar)) throw Exception(" Некоректно указан операнд: +^ | (^ | *^" ) // +^ | (^ | *^
+            if(isLoop(char) && isLoop(nextChar)) throw Exception(" Некоректно указан оператор: ^" ) // ^^
+            if(isOperation(char) && isOperation(nextChar)) throw Exception(" Некоректно указан операнд: + | *" ) // ++ | ** | +* | *+
 
         }
     }
 
     fun analysis(regExp: String): String {
         if(!checkBracket(regExp))
-            throw Exception() //четность скобок
+            throw Exception( "пропущена скобка") //четность скобок
         val  withoutSpacesString = withoutSpaces(regExp)
-        try { correctPlacedOperations(withoutSpacesString) }catch (e: Exception) { throw Exception() }
+        try { correctPlacedOperations(withoutSpacesString) }catch (e: Exception) { throw Exception( " Некоректно указан операнд" ) }
         return formattedRegexp(withoutSpacesString)
     }
 }
