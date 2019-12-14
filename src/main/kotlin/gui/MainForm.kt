@@ -39,29 +39,14 @@ class MainForm : View() {
 
     init {
         with(root) {
-//            menubar {
-//                menu("File") {
-//                    menu("Connect") {
-//                        item("Facebook")
-//                        item("Twitter")
-//                    }
-//                    separator()
-//                    item("Save").action { println("Saving!") }
-//                    item("Quit")
-//                }
-//                menu("Edit") {
-//                    item("Copy")
-//                    item("Paste")
-//                }
-//            }
             tabpane {
                 tab("info") {
                     textflow {
-                        text {
+                        text (
                             "special symbols: ( +, *, (, ), ^, #, %) " +
                                     "" +
                                     ""
-                        }
+                            )
                     }
                     button("   gg   ").action {
                         try {
@@ -70,13 +55,7 @@ class MainForm : View() {
                             dialog("Exaption: ") {
                                 val model = ViewModel()
                                 val note = model.bind { SimpleStringProperty() }
-
-                                field("") {
-                                    textarea(note) {
-                                        required()
-                                        whenDocked { requestFocus() }
-                                    }
-                                }
+                                textarea(note)
                                 note.value = ex.message
                             }
                         }
@@ -85,9 +64,9 @@ class MainForm : View() {
                 }
                 tab("help") {
                     textflow {
-                        text { "example: \n" +
+                        text ("example: \n" +
                                 "(a+b+c)^*c*(a+b+c)^" +
-                                "" }
+                                "" )
                     }
                 }
                 tab("about") {

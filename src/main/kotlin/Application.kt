@@ -7,6 +7,7 @@ import regular.GeneratedRegExSeq
 import java.lang.Exception
 
 import gui.MainForm
+import gui.OMainForm
 import javafx.application.Application
 import tornadofx.*
 
