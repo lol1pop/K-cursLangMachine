@@ -3,6 +3,7 @@ package gui
 
 import analyzer.Analyzer
 import analyzer.lexical.Lexical
+import com.GenRegExp
 import gui.controllers.ComboStor
 import gui.controllers.ListGeneratedGrammaticController
 import gui.models.Terminal
@@ -14,10 +15,11 @@ import javafx.scene.layout.Priority
 import javafx.scene.paint.Color
 import javafx.scene.text.Font
 import regular.GeneratedFromReg
-import regular.GeneratedRegExSeq
 import tornadofx.*
 import java.io.File
 import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.LocalTime
 
 class MainForm : View() {
     override val root = Form()
@@ -31,13 +33,18 @@ class MainForm : View() {
     val multiField = SimpleIntegerProperty()
     var multiSymbol = ' '
     var result = emptyList<String>()
-
+    var reg = ""
     init {
         with(root) {
             menubar {
                 menu("View") {
                     item("About").action { textFlowAbout() }
                 }
+//                menu("tools") {
+//                    menu("RegEx") {
+//                        item("gen").action { dopgen() }
+//                    }
+//                }
             }
             tabpane {
                 tab("info") {
@@ -77,7 +84,9 @@ class MainForm : View() {
                     }
                     hbox {
                         label("Sequent:  ")
-                        textfield(termModel.sequent) { required(message = "Sequent") }
+                        textfield(termModel.sequent) {
+                            //required(message = "Sequent")
+                        }
                         setOnKeyReleased {
                             if(checkSpecialSymbol(termModel.sequent.value)) termModel.sequent.value = finAndDeleteSpecialSymbol(termModel.sequent.value)
                         }
@@ -97,12 +106,20 @@ class MainForm : View() {
                                 txt.prefHeight = 80.0
                                 buttonbar {
                                     button("Generated RegEx").action {
+                                        val s =
                                         termModel.commit {
-                                            note.value = GeneratedRegExSeq(
-                                                termModel.alphabet.value.split(","),
-                                                termModel.sequent.value,
-                                                Pair(multiSymbol.toString(), multiField.value)
+//                                            note.value = GeneratedRegExSeq(
+//                                                termModel.alphabet.value.split(","),
+//                                                if(termModel.sequent.value.isNullOrBlank()) "" else termModel.sequent.value,
+//                                                Pair(multiSymbol.toString(), multiField.value)
+//                                            ).build()
+                                            note.value = GenRegExp(
+                                                if(termModel.sequent.value.isNullOrBlank()) "" else termModel.sequent.value,
+                                                termModel.alphabet.value.split(",").toTypedArray(),
+                                                if(multiSymbol.toString().isNullOrBlank()) termModel.alphabet.value.split(",").first() else multiSymbol.toString(),
+                                                multiField.value
                                             ).build()
+                                            reg = note.value
                                         }
                                     }
                                     button("Generated Chain").action {
@@ -131,7 +148,17 @@ class MainForm : View() {
                         list.prefWidth = 479.0
                     }
                     buttonbar {
-                        button("Save file").action { File("regEx_${LocalDate.now()}").writeText(result.joinToString("\n")) }
+                        button("Save file").action {
+                            val data = "alphabet: ${termModel.alphabet.value}\n" +
+                                    "sequence: ${termModel.sequent.value}\n" +
+                                    "multiSymbol: $multiSymbol\n" +
+                                    "multi: ${multiField.value}\n" +
+                                    "min: $min max: $max\n" +
+                                    "reg: $reg"
+                            val chain = result.joinToString("\n")
+                            File("regEx_${LocalDate.now()}_${LocalTime.now().second}").writeText(
+                                data + chain
+                        ) }
                         button("Clean Result").action { listStore.list.clear() }
                     }
                 }
@@ -170,7 +197,9 @@ class MainForm : View() {
         val regex = Lexical.analysis(regEx)
         val a = Analyzer()
         a.set(regex)
-        val regGen = GeneratedFromReg(a.stringToObject())
+        val r = a.stringToObject()
+        println(r)
+        val regGen = GeneratedFromReg(r)
         checkAndSwapRange()
         result = regGen.start(min, max).toSet().toList()
         listStore.list.setAll(result)
@@ -186,7 +215,7 @@ class MainForm : View() {
         }
     }
 
-    private fun isSpecial(char: Char) = listOf('+', '*', '^', '(', ')', '%', '#').contains(char)
+    private fun isSpecial(char: Char) = listOf('+', '*', '^', '(', ')', '%', '#','&').contains(char)
     private fun checkSpecialSymbol(data: String): Boolean {
         for (char in data)
             if (isSpecial(char)) return true
@@ -309,6 +338,23 @@ class MainForm : View() {
         }
     }
 
+
+    private fun dopgen() = dialog("RegEx") {
+        val model = ViewModel()
+        val note = model.bind { SimpleStringProperty() }
+        val txt = textarea(note) { required() }
+        txt.prefHeight = 80.0
+        button("Generated RegEx").action {
+            termModel.commit {
+                note.value = GenRegExp(
+                    if(termModel.sequent.value.isNullOrBlank()) "" else termModel.sequent.value,
+                    termModel.alphabet.value.split(",").toTypedArray(),
+                    multiSymbol.toString(),
+                    multiField.value
+                ).build()
+            }
+        }
+    }
 }
 
 

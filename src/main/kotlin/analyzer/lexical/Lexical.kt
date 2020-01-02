@@ -73,6 +73,7 @@ object Lexical {
         for(rm in removeDoubleBracket){
             val size = rm.length
             val i = new.indexOf(rm)
+            if(i < 0) return regExp
             val loop = (findLoop(rm) && new.elementAt( i + size) != '^')
             val replace = rm.replace("(","").replace(")","").replace("^","")
             new = if(loop)

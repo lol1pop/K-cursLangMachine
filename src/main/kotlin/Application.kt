@@ -13,6 +13,7 @@ import tornadofx.*
 class MainApp : App(MainForm::class)
 
 fun main(args: Array<String>) {
+    mainAnalyzer()
     Application.launch(MainApp::class.java, *args)
 }
 
@@ -31,7 +32,7 @@ fun mainReg(){
 }
 fun mainAnalyzer() {
     val a = Analyzer()
-    a.set("a*(a+b^*c)")
+    a.set("a^")
     val regresult = a.stringToObject()
     println(regresult)
 }

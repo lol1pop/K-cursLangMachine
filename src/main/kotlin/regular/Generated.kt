@@ -96,8 +96,6 @@ class GeneratedFromReg(regexp: List<Reg>) {
     fun start(minLen: Int, maxLen: Int): List<String> {
         val startReg = Reg(andReg = rules)
         generated("", startReg, maxLen)
-        println("====result=====")
-        //this.listChain.forEach { println(it) }
         return removalExcess(minLen)
     }
 
