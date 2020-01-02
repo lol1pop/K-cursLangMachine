@@ -2,7 +2,6 @@ import analyzer.Analyzer
 import analyzer.lexical.Lexical
 import regular.Reg
 import regular.GeneratedFromReg
-import com.mifmif.common.regex.Generex
 import regular.GeneratedRegExSeq
 import java.lang.Exception
 
@@ -14,9 +13,9 @@ import tornadofx.*
 class MainApp : App(MainForm::class)
 
 fun main(args: Array<String>) {
+    mainAnalyzer()
     Application.launch(MainApp::class.java, *args)
 }
-
 
 fun mainReg(){
     val regex = listOf(Reg(term = listOf("a")),
@@ -33,7 +32,7 @@ fun mainReg(){
 }
 fun mainAnalyzer() {
     val a = Analyzer()
-    a.set("a*(a+b^*c)")
+    a.set("a^")
     val regresult = a.stringToObject()
     println(regresult)
 }
@@ -52,19 +51,3 @@ fun main1(){
     val k = Lexical.analysis(str)
     mainReg()
 }
-
-
-//genregEx(rep("abc(a+b)^((a+b)^c(a+b)^c(a+b)^)^abc",5))
-// genregEx(rep("0(1+0)^((0+1)(0+1))",5))
-fun genregEx(str: String) {
-    val generex = Generex(str)
-    generex.getMatchedStrings(100).forEach { println(it) }
-//    val matchedStrs: List<String> = generex.getAllMatchedStrings()
-//
-//    val iterator: Iterator? = generex.iterator()
-//    while (iterator?.hasNext()!!) {
-//        println(iterator.next().toString() + " ")
-//    }
-}
-
-fun rep(reg: String, max: Int) = reg.replace("+","|").replace("^","{0,$max}")

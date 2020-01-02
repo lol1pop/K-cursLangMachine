@@ -11,13 +11,14 @@ class GeneratedRegExSeq(
     private var blockMulti = ""
     private var shemMulti = ""
     private var moduleMulti = ""
+    private var alphabetWithoutMulti = ""
 
     private fun blockMulti() {
-        val alphabetWithoutMulti = alphabet.filter { it != symbolMulti.first }.joinToString("+")
+        alphabetWithoutMulti = alphabet.filter { it != symbolMulti.first }.joinToString("+")
         moduleMulti = "${symbolMulti.first}*($alphabetWithoutMulti)^"
         blockMulti += moduleMulti
         for (i in 1 until symbolMulti.second) blockMulti += "*$moduleMulti"
-        blockMulti = "($blockMulti)^"
+        blockMulti = "($alphabetWithoutMulti)^*($blockMulti)^"
     }
 
     private fun startStringMulti(block: String): String = "$blockMulti*$block*$blockMulti"
@@ -30,21 +31,21 @@ class GeneratedRegExSeq(
         for (i in shema.indices step 2){
             val subStart = shema.subSequence(0, i)
             val subEnd = shema.subSequence(i, shema.length)
-            shemMulti +="+$subStart%*$subEnd"
+            shemMulti +="+$subStart%&*$subEnd"
         }
     }
 
-    private fun createdBodyMulti() = "(${shemMulti.replace("%", underSeq).replace("#", moduleMulti)})"
+    private fun createdBodyMulti() = "(${shemMulti.replace("%", underSeq).replace("#", moduleMulti).replace("&", "($alphabetWithoutMulti)^")})"
 
     private fun existSymbolMutliInUnderSeq() = underSeq.split(symbolMulti.first).size - 1
 
     private fun multiOne(): String  =
         if(underSeq.contains(symbolMulti.first)) "(${alphabet.joinToString("+")})^*$underSeq*(${alphabet.joinToString("+")})^"
-        else "(${alphabet.joinToString("+")})^(${symbolMulti.first}*$underSeq+$underSeq*${symbolMulti.first})(${alphabet.joinToString("+")})^"
+        else "(${alphabet.joinToString("+")})^*(${symbolMulti.first}*$underSeq+$underSeq*${symbolMulti.first})(${alphabet.joinToString("+")})^"
 
     private fun multiDouble(): String =
         if(existSymbolMutliInUnderSeq() % 2 == 0) startStringMulti(underSeq)
-        else startStringMulti("($moduleMulti*$moduleMulti*$underSeq+$moduleMulti*$underSeq*$moduleMulti+$underSeq*$moduleMulti*$moduleMulti)")
+        else startStringMulti("($underSeq*($alphabetWithoutMulti)^*$moduleMulti*$moduleMulti+$moduleMulti*$moduleMulti*$underSeq)")
 
     private fun multi(): String {
         val count = existSymbolMutliInUnderSeq()
@@ -62,6 +63,11 @@ class GeneratedRegExSeq(
     }
 
     fun build(): String {
+        if(underSeq.isBlank()) {
+            if(symbolMulti.first.isBlank() || symbolMulti.second == 1) return "(${alphabet.joinToString("+")})^"
+            blockMulti()
+            return blockMulti
+        }
         checkValidData()
         if(symbolMulti.first.isBlank()) return "(${alphabet.joinToString("+")})^*$underSeq*(${alphabet.joinToString("+")})^"
         if(symbolMulti.second == 1) return multiOne()
@@ -74,12 +80,12 @@ class GeneratedRegExSeq(
         val special = listOf("*", "(", ")", "+", "^", "#", "%")
         alphabet.forEach {
             if(special.contains(it))
-                throw Exception()
+                throw Exception("uncorrected alphabet")
         }
 
         underSeq.forEach {
             if (special.contains(it.toString()))
-                throw Exception()
+                throw Exception("uncorrected sequence")
         }
     }
 }
